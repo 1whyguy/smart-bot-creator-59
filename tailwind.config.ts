@@ -56,6 +56,20 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        custom: {
+          primary: "#ff4757",
+          secondary: "#ff6b81",
+          dark: {
+            bg: "#121212",
+            text: "#e0e0e0",
+            section: "#1e1e1e",
+          },
+          light: {
+            bg: "#f8f9fa",
+            text: "#343a40",
+            section: "#ffffff",
+          },
+        },
       },
       keyframes: {
         "fade-up": {
@@ -68,9 +82,24 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "fade-down": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-20px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.5s ease-out",
+        "fade-down": "fade-down 0.5s ease-out",
+      },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        opensans: ["Open Sans", "sans-serif"],
       },
     },
   },
