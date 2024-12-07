@@ -432,7 +432,8 @@ const Index = () => {
 const Index = () => {
   return (
   return (
-Expand 1 lines ...			
+    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <Header />
       <Header />
       <Hero />
@@ -453,4 +454,5 @@ Expand 1 lines ...
   );
 };
 };
-Expand 2 lines ...			
+export default Index;
+export default Index;
