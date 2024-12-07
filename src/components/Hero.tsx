@@ -3,21 +3,34 @@ import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center px-4 animate-fade-up">
-      <h1 className="text-4xl md:text-6xl font-bold text-center mb-6 bg-gradient-to-r from-telegram-primary to-telegram-secondary bg-clip-text text-transparent">
-        Умный Telegram Бот
-      </h1>
-      <p className="text-xl md:text-2xl text-gray-600 text-center max-w-2xl mb-8">
-        Ваш персональный помощник, который сделает вашу жизнь проще и эффективнее
-      </p>
-      <Button
-        size="lg"
-        className="bg-gradient-to-r from-telegram-primary to-telegram-secondary hover:opacity-90 transition-opacity"
-        onClick={() => window.open("https://t.me/your_bot_username", "_blank")}
-      >
-        <MessageCircle className="mr-2" />
-        Начать общение
-      </Button>
-    </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-16">
+      <div className="absolute inset-0 bg-gradient-to-r from-custom-primary to-custom-secondary opacity-20 dark:opacity-30" />
+      
+      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto animate-fade-up">
+        <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-custom-primary to-custom-secondary bg-clip-text text-transparent">
+          Автоматизация, геймификация и управление — всё в одном Telegram-боте!
+        </h2>
+        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+          Присоединяйтесь к MyMindBot и упростите жизнь в ваших чатах.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-custom-primary to-custom-secondary hover:opacity-90 transition-opacity"
+            onClick={() => window.open("https://t.me/MyMindBot?start=connect", "_blank")}
+          >
+            <MessageCircle className="mr-2" />
+            Подключить бота
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() => window.open("https://t.me/MyMindBot?start=auth", "_blank")}
+          >
+            Авторизоваться через Telegram
+          </Button>
+        </div>
+      </div>
+    </section>
   );
 };
