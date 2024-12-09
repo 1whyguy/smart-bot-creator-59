@@ -23,9 +23,10 @@ export const AnimatedCard = React.forwardRef<HTMLDivElement, AnimatedCardProps>(
           "transition-all duration-200 hover:cursor-pointer hover:shadow-lg",
           className
         )}
-        whileHover={{ y: -5 }}
+        whileHover={{ y: -5, scale: 1.02 }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
         {...props}
       >
         <div className="relative h-32 bg-gradient-to-r from-custom-primary to-custom-secondary">
