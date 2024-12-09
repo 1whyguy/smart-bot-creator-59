@@ -1,39 +1,56 @@
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
-.animated-card {
-  width: 100%;
-  max-width: 320px;
-  background: white;
-  border-radius: 30px;
-  box-shadow: 15px 15px 30px #bebebe,
-             -15px -15px 30px #ffffff;
-  transition: 0.2s ease-in-out;
+.floating {
+  animation: float 6s ease-in-out infinite;
 }
 
-.dark .animated-card {
-  background: #1a1a1a;
-  box-shadow: 15px 15px 30px rgba(0,0,0,0.2),
-             -15px -15px 30px rgba(255,255,255,0.05);
+.pulsing {
+  animation: pulse 2s ease-in-out infinite;
 }
 
-.animated-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+.shimmering {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
 }
 
 .glass-effect {
@@ -43,35 +60,17 @@
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
-.floating {
-  animation: float 6s ease-in-out infinite;
-}
-
-.pulsing {
-  animation: pulse 3s ease-in-out infinite;
-}
-
-.shimmering {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
-}
-
 .mega-button {
   position: relative;
-  padding: 12px 24px;
-  border-radius: 12px;
-  background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-  border: none;
-  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
   font-weight: bold;
-  overflow: hidden;
+  color: white;
+  background: linear-gradient(45deg, var(--custom-primary), var(--custom-secondary));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .mega-button::before {
@@ -96,10 +95,9 @@
 
 .mega-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .mega-button:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
 }
