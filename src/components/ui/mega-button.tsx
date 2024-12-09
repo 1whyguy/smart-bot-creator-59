@@ -4,8 +4,9 @@ import * as React from "react";
 import { motion, type HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-interface MegaButtonProps extends HTMLMotionProps<"button"> {
+interface MegaButtonProps extends Omit<HTMLMotionProps<"button">, "children"> {
   variant?: "default" | "gradient";
+  children: React.ReactNode;
 }
 
 export const MegaButton = React.forwardRef<HTMLButtonElement, MegaButtonProps>(
